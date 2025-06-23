@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Load daily emissions NetCDF (already spatially distributed)
-daily_ds = xr.open_dataset("gridded_emissions_weekday_July_ACT.nc")
+daily_ds = xr.open_dataset("gridded_emissions_weekday_July_QLD.nc")
 
 # Load diurnal pattern
 diurnal_df = pd.read_csv("diurnals/diurnal_weekday.csv")
@@ -29,7 +29,7 @@ hourly_ds = hourly_ds.assign_coords(
 )
 
 # Save to NetCDF
-hourly_ds.to_netcdf("gridded_emissions_weekday_July_ACT_hourly.nc")
+hourly_ds.to_netcdf("gridded_emissions_weekday_July_QLD_hourly.nc")
 
-print("✅ Hourly emission file created: gridded_emissions_weekday_July_ACT_hourly.nc")
+print("✅ Hourly emission file created: gridded_emissions_weekday_July_QLD_hourly.nc")
 
